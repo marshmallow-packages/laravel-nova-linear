@@ -3,11 +3,12 @@
 namespace LaravelNovaLinear\Nova;
 
 use App\Nova\Resource;
-use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 
 class LinearIssue extends Resource
 {
@@ -39,8 +40,8 @@ class LinearIssue extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make(__('Title'), 'title'),
-            Textarea::make(__('Description'), 'description'),
+            Text::make(__('Title'), 'title')->required()->rules(['required']),
+            Markdown::make(__('Description'), 'description')->alwaysShow(),
             Files::make(__('Files'), 'files')
                 ->hideFromIndex(),
         ];
