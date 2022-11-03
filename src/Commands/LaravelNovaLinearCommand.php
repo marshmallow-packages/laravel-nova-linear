@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace LaravelNovaLinear\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelNovaLinearCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-nova-linear';
 
     public $description = 'My command';
 

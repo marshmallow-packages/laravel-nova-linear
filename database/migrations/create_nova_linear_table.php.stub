@@ -8,11 +8,11 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('migration_table_name_table', function (Blueprint $table) {
+        Schema::create('linear_issues', function (Blueprint $table) {
             $table->id();
-
-            // add fields
-
+            $table->string('title');
+            $table->text('description')->nullable()->default(null);
+            $table->unsignedBigInteger('user_id')->nullable()->default(null);
             $table->timestamps();
         });
     }
