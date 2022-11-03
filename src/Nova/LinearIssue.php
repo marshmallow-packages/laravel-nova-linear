@@ -3,15 +3,14 @@
 namespace LaravelNovaLinear\Nova;
 
 use App\Nova\Resource;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 
 class LinearIssue extends Resource
 {
-
     public static $model = \LaravelNovaLinear\Models\LinearIssue::class;
 
     /**

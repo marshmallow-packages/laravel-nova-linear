@@ -2,9 +2,9 @@
 
 namespace LaravelNovaLinear;
 
+use LaravelNovaLinear\Commands\LaravelNovaLinearCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use LaravelNovaLinear\Commands\LaravelNovaLinearCommand;
 
 class LaravelNovaLinearServiceProvider extends PackageServiceProvider
 {

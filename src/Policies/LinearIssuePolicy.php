@@ -2,8 +2,8 @@
 
 namespace LaravelNovaLinear\Policies;
 
-use LaravelNovaLinear\Models\LinearIssue;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use LaravelNovaLinear\Models\LinearIssue;
 
 class LinearIssuePolicy
 {

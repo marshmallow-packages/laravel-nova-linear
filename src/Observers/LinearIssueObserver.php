@@ -2,8 +2,8 @@
 
 namespace LaravelNovaLinear\Observers;
 
-use LaravelNovaLinear\Models\LinearIssue;
 use LaravelNovaLinear\Jobs\SubmitIssueToLinear;
+use LaravelNovaLinear\Models\LinearIssue;
 
 class LinearIssueObserver
 {

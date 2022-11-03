@@ -3,15 +3,15 @@
 namespace LaravelNovaLinear\Jobs;
 
 use Illuminate\Bus\Queueable;
-use LaravelLinear\Models\LinearToken;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
-use LaravelNovaLinear\Models\LinearIssue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+use LaravelLinear\Models\LinearToken;
+use LaravelLinear\Notifications\Messages\LinearIssue as LinearIssueMessage;
 use LaravelLinear\Notifications\NewLinearIssue;
 use LaravelNovaLinear\Facades\LaravelNovaLinear;
-use LaravelLinear\Notifications\Messages\LinearIssue as LinearIssueMessage;
+use LaravelNovaLinear\Models\LinearIssue;
 
 class SubmitIssueToLinear implements ShouldQueue
 {
