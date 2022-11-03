@@ -90,7 +90,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
--   [Stef van Esch](https://github.com/marshmallow)
+-   [Stef van Esch](https://github.com/stefvanesch)
+-   [Lars Kort](https://github.com/LTKort)
 -   [All Contributors](../../contributors)
 
 ## License
