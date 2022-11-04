@@ -73,6 +73,7 @@ class GenerateIssueTemplateFiles extends Command
 
 - Operating System and Version: #.#
 - Browser type and version: #.#
+- Reproduction Url: #.#
 - Please attach any available screenshots
 
 ### Description:
