@@ -11,6 +11,8 @@ class LinearIssue extends Model implements HasMedia
 {
     use InteractsWithMedia;
 
+    protected $guarded = [];
+
     /**
      * The "booting" method of the model.
      *

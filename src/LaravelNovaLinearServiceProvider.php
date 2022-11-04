@@ -2,9 +2,9 @@
 
 namespace LaravelNovaLinear;
 
-use LaravelNovaLinear\Commands\LaravelNovaLinearCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use LaravelNovaLinear\Commands\GenerateIssueTemplateFiles;
 
 class LaravelNovaLinearServiceProvider extends PackageServiceProvider
 {
@@ -19,7 +19,10 @@ class LaravelNovaLinearServiceProvider extends PackageServiceProvider
             ->name('laravel-nova-linear')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_nova_linear_table')
-            ->hasCommand(LaravelNovaLinearCommand::class);
+            ->hasMigrations([
+                'create_nova_linear_table',
+                'create_issue_label_column',
+            ])
+            ->hasCommand(GenerateIssueTemplateFiles::class);
     }
 }

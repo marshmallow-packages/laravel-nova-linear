@@ -41,7 +41,12 @@ class SubmitIssueToLinear implements ShouldQueue
         $issue = (new LinearIssueMessage)
             ->title($this->linearIssue->title)
             ->message($this->linearIssue->description)
-            ->submitter($user->name);
+            ->submitter($user->name)
+            ->issueModel($this->linearIssue);
+
+        if ($this->linearIssue->issue_label_id) {
+            $issue = $issue->label($this->linearIssue->issue_label_id);
+        }
 
         $this->linearIssue->getMedia('files')->each(function ($media) use (&$issue) {
             $issue = $issue->attachment($media->getUrl());

@@ -70,6 +70,14 @@ public function boot()
 }
 ```
 
+### Generate template files
+
+If you are working with labels, you have the options to generate template files for every label. This will help you getting complete information for every issue that is created. You can generate these files with the following command.
+
+```bash
+php artisan linear:generate-issue-templates
+```
+
 ## Testing
 
 ```bash

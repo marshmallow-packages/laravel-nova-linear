@@ -5,10 +5,13 @@ namespace LaravelNovaLinear\Nova;
 use App\Nova\Resource;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\FormData;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
+use LaravelNovaLinear\Facades\LaravelNovaLinear;
 
 class LinearIssue extends Resource
 {
@@ -38,13 +41,39 @@ class LinearIssue extends Resource
      */
     public function fields(NovaRequest $request)
     {
-        return [
+        $fields = [
             ID::make()->sortable(),
             Text::make(__('Title'), 'title')->required()->rules(['required']),
-            Markdown::make(__('Description'), 'description')->alwaysShow(),
+        ];
+
+        if (config('nova-linear.use_labels')) {
+            $fields = array_merge($fields, [
+                Select::make(__('Label'), 'issue_label_id')->required()->rules(['required'])->options(
+                    LaravelNovaLinear::getIssueLabelsAsArray()
+                ),
+                Markdown::make(__('Description'), 'description')->alwaysShow()
+                    ->hide()
+                    ->dependsOn(
+                        ['issue_label_id'],
+                        function (Markdown $field, NovaRequest $request, FormData $formData) {
+                            if ($formData->issue_label_id) {
+                                $field->show()->withMeta([
+                                    'value' => $this->description ?? LaravelNovaLinear::getIssueTemplate($formData->issue_label_id),
+                                ]);
+                            }
+                        }
+                    ),
+            ]);
+        } else {
+            $fields = array_merge($fields, [
+                Markdown::make(__('Description'), 'description')->alwaysShow(),
+            ]);
+        }
+
+        return array_merge($fields, [
             Files::make(__('Files'), 'files')
                 ->hideFromIndex(),
-        ];
+        ]);
     }
 
     /**
