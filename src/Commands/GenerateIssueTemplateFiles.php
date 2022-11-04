@@ -2,8 +2,8 @@
 
 namespace LaravelNovaLinear\Commands;
 
-use Illuminate\Support\Str;
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 use LaravelNovaLinear\Facades\LaravelNovaLinear;
 
 class GenerateIssueTemplateFiles extends Command
@@ -40,7 +40,7 @@ class GenerateIssueTemplateFiles extends Command
         $template_title_name = Str::of($label_slug)->title()->replace('-', '');
         $template_method = "get{$template_title_name}Template";
 
-        if (!file_exists("{$path}/{$label_slug}")) {
+        if (! file_exists("{$path}/{$label_slug}")) {
             $file = "{$path}/{$label_slug}.md";
             $fp = fopen($file, 'w');
 
@@ -58,7 +58,7 @@ class GenerateIssueTemplateFiles extends Command
         $path = base_path();
         collect(['.linear', 'ISSUE_TEMPLATE'])->each(function ($folder) use (&$path) {
             $path .= "/{$folder}";
-            if (!file_exists($path)) {
+            if (! file_exists($path)) {
                 mkdir($path);
             }
         });
@@ -68,7 +68,7 @@ class GenerateIssueTemplateFiles extends Command
 
     protected function getBugTemplate()
     {
-        return <<<EOT
+        return <<<'EOT'
 # We found a new bug
 
 - Operating System and Version: #.#
@@ -89,7 +89,7 @@ EOT;
 
     protected function getIdeasTemplate()
     {
-        return <<<EOT
+        return <<<'EOT'
 # We have a new idea
 
 Describe here new idea here...
@@ -98,7 +98,7 @@ EOT;
 
     protected function getImprovementTemplate()
     {
-        return <<<EOT
+        return <<<'EOT'
 # We have a new improvement request
 
 Describe here new improvement here...
@@ -107,7 +107,7 @@ EOT;
 
     protected function getFeatureTemplate()
     {
-        return <<<EOT
+        return <<<'EOT'
 # We have a new feature request
 
 Describe here new feature here...

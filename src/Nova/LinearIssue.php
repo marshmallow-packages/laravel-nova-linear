@@ -3,16 +3,14 @@
 namespace LaravelNovaLinear\Nova;
 
 use App\Nova\Resource;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\FormData;
-use Laravel\Nova\Fields\Markdown;
-use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
+use Laravel\Nova\Fields\FormData;
+use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Markdown;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use LaravelNovaLinear\Facades\LaravelNovaLinear;
-
 
 class LinearIssue extends Resource
 {
