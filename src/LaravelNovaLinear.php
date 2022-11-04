@@ -22,8 +22,7 @@ class LaravelNovaLinear
             return in_array(Arr::get($tag, 'name'), $ignore_labels);
         })->mapWithKeys(function ($tag) {
             return [
-                Arr::get($tag, 'id') =>
-                Arr::get($tag, 'name')
+                Arr::get($tag, 'id') => Arr::get($tag, 'name'),
             ];
         })->toArray();
     }

@@ -2,9 +2,9 @@
 
 namespace LaravelNovaLinear;
 
+use LaravelNovaLinear\Commands\GenerateIssueTemplateFiles;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use LaravelNovaLinear\Commands\GenerateIssueTemplateFiles;
 
 class LaravelNovaLinearServiceProvider extends PackageServiceProvider
 {
