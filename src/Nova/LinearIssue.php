@@ -13,6 +13,7 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use LaravelNovaLinear\Facades\LaravelNovaLinear;
 
+
 class LinearIssue extends Resource
 {
     public static $model = \LaravelNovaLinear\Models\LinearIssue::class;

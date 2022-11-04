@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-nova-linear` will be documented in this file.
 
+## v1.1.0 - 2022-11-03
+
+**Full Changelog**: https://github.com/marshmallow-packages/laravel-nova-linear/compare/v1.0.0...v1.1.0
+
 ## v1.0.0 - 2022-11-03
 
 ### What's Changed
